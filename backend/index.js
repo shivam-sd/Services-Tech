@@ -5,7 +5,9 @@ const crypto = require("crypto");
 const axios = require("axios");
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: process.env.FRONTED_URL
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
